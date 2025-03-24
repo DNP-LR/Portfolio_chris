@@ -17,5 +17,5 @@ import {ButtonComponent} from './shared/component/button/button.component';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'Portfolio';
+
 }
