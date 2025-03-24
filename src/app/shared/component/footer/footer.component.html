@@ -1,0 +1,7 @@
+<footer class="flex flex-wrap gap-4">
+  <ul class="flex flex-row gap-4 p-4">
+    @for (links of footerLinks; track $index) {
+      <li>{{ links.name }}</li>
+    }
+  </ul>
+</footer>

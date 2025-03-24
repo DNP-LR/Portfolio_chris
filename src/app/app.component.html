@@ -1,17 +1,74 @@
-<header class="bg-gray-800  text-xl text-white">
-  <ul class="flex flex-row gap-4 p-4">
-    <li>Header</li>
-    <li>Link</li>
-  </ul>
-</header>
-<!--flex-grow-->
-<body class="flex flex-col gap-4 h-screen p-4 bg-gray-200 h-full">
-<nav class="flex flex-col gap-4 bg-red-400 ">
-  <section>Hero section</section>
-  <section>Hero section</section>
-</nav>
-<section class="flex flex-grow bg-green-400">
-  <div>dsd</div>
-</section>
-</body>
-<footer class="bg-gray-800 text-white">Footer</footer>
+<app-body>
+  <app-header/>
+
+  <section class="flex flex-col md:flex-row  bg-primary/20 min-h-screen p-10 items-center justify-center">
+    <div class="flex flex-col items-start w-[40%]">
+      <div class="w-16 h-[4px] bg-primary mb-2"></div>
+      <h1 class="text-6xl font-semibold text-black">I'm John</h1>
+      <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla
+        auctor.</p>
+      <app-button
+        [text]="'Hire Me'"
+      />
+      <div class="flex flex-wrap gap-4 mt-10">
+        @for (item of [1, 1, 1, 1, 1]; track $index) {
+          <img
+            class="cursor-pointer transition-all duration-300 ease-in"
+            ngSrc="/images/facebook-svgrepo-com.svg"
+            alt="John's"
+            width="50"
+            height="50"/>
+        }
+      </div>
+    </div>
+    <img
+      class="hidden md:block w-full md:w-[500px] lg:w-[700px]"
+      ngSrc="/images/Critical thinking-cuate.png"
+      width="700"
+      height="700"
+      alt="John's"/>
+  </section>
+
+  <section class="flex flex-col-reverse md:flex-row items-center justify-center gap-8 p-10 bg-primary/5">
+    <img
+      class="hidden md:block w-full md:w-[500px] lg:w-[700px]"
+      ngSrc="/images/Critical thinking-cuate.png"
+      width="700"
+      height="700"
+      alt="John's"/>
+    <div class="flex flex-col items-start md:w-1/2">
+      <div>
+        <h2 class="text-4xl font-semibold font-poppins">About</h2>
+        <div class="w-16 h-[4px] bg-primary mb-2"></div>
+      </div>
+      <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla
+        auctor...</p>
+      <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla
+        auctor...</p>
+      <app-button [text]="'About Me'"/>
+    </div>
+  </section>
+
+  <section class="flex flex-col items-center gap-8 justify-center p-10 bg-primary/50">
+    <div class="text-center">
+      <h2 class="text-4xl font-semibold font-poppins">Services</h2>
+      <div class="w-16 h-[4px] bg-primary mx-auto mt-2 mb-4"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-[80%]">
+      @for (item of [1, 2, 3]; track $index) {
+        <div
+          class="bg-primary_white hover:bg-primary_hover transition-all duration-300 ease-in cursor-pointer rounded-lg p-6 shadow-md text-center">
+          <img class="mx-auto mb-4"
+               ngSrc="/images/code_web_development.svg"
+               alt="Service" width="50" height="50"/>
+          <h3 class="text-2xl font-semibold font-poppins">
+            {{ item === 1 ? 'Web Development' : item === 2 ? 'Design' : 'App Designs' }}
+          </h3>
+          <div class="w-16 h-[4px] bg-primary mx-auto mt-2 mb-4"></div>
+          <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </div>
+      }
+    </div>
+  </section>
+  <app-footer/>
+</app-body>
