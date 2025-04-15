@@ -52,7 +52,7 @@
   <section class="flex flex-col items-center gap-8 justify-center p-10 bg-primary/50">
     <div class="text-center">
       <h2 class="text-4xl font-semibold font-poppins">Services</h2>
-      <div class="w-16 h-[4px] bg-primary mx-auto mt-2 mb-4"></div>
+      <div class="w-16 h-[4px] rounded bg-primary mx-auto mt-2 mb-4"></div>
     </div>
     <div class="flex flex-wrap w-full items-center justify-center gap-8">
       @for (item of [1, 2, 3]; track $index) {
@@ -70,5 +70,165 @@
       }
     </div>
   </section>
+  <section class="flex flex-col items-center gap-8 justify-center p-10 bg-primary/5">
+    <div class="text-center">
+      <h2 class="text-4xl font-semibold font-poppins">Latest Works</h2>
+      <div class="w-16 h-[4px] bg-primary mx-auto mt-2 mb-4"></div>
+    </div>
+    <div class="flex flex-col gap-4 w-[90%] lg:w-[60%] text-wrap">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.
+      </p>
+      <p>
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+        unchanged.
+      </p>
+      <p>
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+        recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
+
+    <div class="flex flex-col md:flex-row w-full lg:w-[90%] h-[50%] items-stretch justify-center gap-2">
+
+      <section
+        class="cursor-pointer relative group rounded flex items-center justify-center flex-col bg-[url('/images/pixel.jpg')] bg-cover bg-center w-full md:w-[40%] min-h-[200px]">
+        <div
+          class="absolute inset-0 backdrop-blur-none group-hover:backdrop-blur-sm bg-black bg-opacity-30 opacity-0 group-hover:opacity-90 flex items-center justify-center rounded transition-all duration-500">
+          <div class="border-2 border-white px-4 py-2 rounded">
+            <p class="text-white text-xl">Your Hover Text</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full">
+        <div class="flex gap-2 flex-col h-full">
+          <div
+            class="cursor-pointer relative group rounded p-40 w-full flex items-center justify-center bg-[url('/images/pixel.jpg')] bg-cover bg-center">
+            <div
+              class="absolute inset-0 backdrop-blur-none group-hover:backdrop-blur-sm bg-black bg-opacity-30 opacity-0 group-hover:opacity-90 flex items-center justify-center rounded transition-all duration-500">
+              <div class="border-2 border-white px-4 py-2 rounded">
+                <p class="text-white text-xl">First Box Text</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="cursor-pointer relative group rounded p-40 flex items-center justify-center bg-[url('/images/pixel.jpg')] bg-cover bg-center">
+            <div
+              class="absolute inset-0 backdrop-blur-none group-hover:backdrop-blur-sm bg-black bg-opacity-30 opacity-0 group-hover:opacity-90 flex items-center justify-center rounded transition-all duration-500">
+              <div class="border-2 border-white px-4 py-2 rounded">
+                <p class="text-white text-xl">Second Box Text</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+        <source src="/videos/your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="relative bg-white bg-opacity-90 rounded-2xl shadow-lg p-8 text-center max-w-md">
+        <h2 class="text-3xl font-bold mb-4">Welcome Title</h2>
+        <p class="mb-6 text-gray-700">Here’s some catchy description text that invites users to explore more.</p>
+        <button class="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition">Get Started</button>
+      </div>
+    </section>
+
+
+  </section>
+
+
+  <section class="flex flex-col items-center gap-8 justify-center p-10 bg-primary/50">
+    <div class="text-center">
+      <h2 class="text-4xl font-semibold font-poppins">Skills</h2>
+      <div class="w-16 h-[4px] rounded bg-primary mx-auto mt-2 mb-4"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start justify-center">
+
+      <div class="bg-primary_white rounded-lg p-8 shadow-lg">
+        <h2 class="text-2xl font-semibold font-poppins mb-6 text-center">Frontend Skills</h2>
+        @for (skill of frontendSkills; track $index) {
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="text-gray-700 font-medium">{{ skill.title }}</span>
+              <span class="text-gray-600">{{ skill.progress }}%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-primary h-3 rounded-full transition-all duration-1000 ease-in-out"
+                   [ngStyle]="{'width': skill.progress + '%'}"></div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="bg-primary_white rounded-lg p-8 shadow-lg">
+        <h2 class="text-2xl font-semibold font-poppins mb-6 text-center">Backend Skills</h2>
+        @for (skill of backendSkills; track $index) {
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="text-gray-700 font-medium">{{ skill.title }}</span>
+              <span class="text-gray-600">{{ skill.progress }}%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-primary h-3 rounded-full transition-all duration-1000 ease-in-out"
+                   [ngStyle]="{'width': skill.progress + '%'}"></div>
+            </div>
+          </div>
+        }
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+
+  </section>
+
+  <section class="flex flex-col items-center gap-8 justify-center p-4 md:p-10 bg-primary/50">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-semibold font-poppins">Block</h2>
+      <div class="w-16 h-[4px] rounded bg-primary mx-auto mt-2 mb-4"></div>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 w-full max-w-7xl mx-auto">
+      @for (post of blogPosts; track $index) {
+        <div
+          class="relative perspective p-2 md:p-4 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)] min-w-[280px] max-w-md">
+          <div
+            class="w-full h-96 transform-style-preserve-3d transition-transform duration-700 ease-in-out group">
+            <div
+              class="absolute w-full h-full backface-hidden bg-primary_white rounded-xl shadow-lg overflow-hidden flex flex-col">
+              <img [src]="post.image" alt="Blog Image" class="w-full h-48 object-cover flex-shrink-0">
+              <div class="p-4 flex flex-col flex-grow">
+                <h3 class="text-xl md:text-2xl font-semibold font-poppins mb-2">{{ post.title }}</h3>
+                <p class="text-gray-600 mb-4 flex-grow">{{ post.description }}</p>
+                <div class="flex items-center mt-auto">
+                  <img [src]="post.authorImage" alt="Author" class="w-8 h-8 md:w-10 md:h-10 rounded-full mr-3">
+                  <span class="text-gray-700 font-medium text-sm md:text-base">{{ post.author }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back Face - Simplified with just the button -->
+            <!--            <div-->
+            <!--              class="absolute w-full h-full backface-hidden bg-primary_white rounded-xl shadow-lg transform rotate-y-180 flex items-center justify-center">-->
+            <!--              <button-->
+            <!--                class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary_hover transition-colors duration-300">-->
+            <!--                Read More-->
+            <!--              </button>-->
+            <!--            </div>-->
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
   <app-footer/>
 </app-body>
