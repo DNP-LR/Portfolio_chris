@@ -1,20 +1,23 @@
 import {Component} from '@angular/core';
-import {NgIf} from '@angular/common';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-header',
   imports: [
-    NgIf
+    RouterLink,
+    RouterLinkActive
   ],
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css'
+
 })
 export class HeaderComponent {
   public isMenuOpen: boolean = false;
 
   public headerLinks = [
-    {name: 'Home', link: '/'},
+    {name: 'Home', link: '/home'},
     {name: 'About', link: '/about'},
-    {name: 'Projects', link: '/projects'},
+    {name: 'Projects', link: '/project'},
     {name: 'Contact', link: '/contact'},
   ]
 

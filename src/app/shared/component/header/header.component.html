@@ -3,7 +3,10 @@
     <div class="text-white font-semibold">Jon <span class="text-secondary">Doe</span></div>
     <ul class="hidden md:flex flex-row gap-6 p-2 text-white">
       @for (links of headerLinks; track $index) {
-        <li class="hover:text-secondary/90 transition duration-300 cursor-pointer">{{ links.name }}</li>
+        <li routerLink="{{ links.link }}"
+            [routerLinkActive]="'active'"
+            class="hover:text-secondary/90 transition duration-300 cursor-pointer">{{ links.name }}
+        </li>
       }
     </ul>
     <button class="md:hidden text-secondary p-2 focus:outline-none">
@@ -15,11 +18,16 @@
     </button>
   </div>
 </header>
-<nav *ngIf="isMenuOpen"
-     class="fixed top-0 left-0 w-full h-full mt-20 bg-red-500 text-white p-6 flex flex-col items-center gap-6 md:hidden z-40">
-  <ul class="flex flex-col gap-4">
-    @for (links of headerLinks; track $index) {
-      <li class="text-xl cursor-pointer hover:text-gray-300 transition duration-300">{{ links.name }}</li>
-    }
-  </ul>
-</nav>
+@if (isMenuOpen) {
+  <nav
+    class="fixed top-0 left-0 w-full h-full mt-20 bg-red-500 text-white p-6 flex flex-col items-center gap-6 md:hidden z-40">
+    <ul class="flex flex-col gap-4">
+      @for (links of headerLinks; track $index) {
+        <li routerLink="{{ links.link }}"
+            class="text-xl cursor-pointer hover:text-gray-300 transition duration-300">{{ links.name }}
+        </li>
+      }
+    </ul>
+  </nav>
+
+}
