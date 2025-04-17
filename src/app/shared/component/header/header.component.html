@@ -4,12 +4,12 @@
     <div class="flex items-center justify-between h-16 md:h-20">
 
       <div class="flex-shrink-0">
-        <a href="#" class="text-2xl font-bold text-primary">
+        <a href="#" class="text-2xl font-bold text-secondary">
           Jon <span class="text-primary_white">Doe</span>
         </a>
       </div>
 
-      <!-- Desktop Navigation -->
+
       <nav class="hidden md:flex items-center space-x-8">
         <ul class="flex space-x-8">
           @for (links of headerLinks; track $index) {
@@ -52,14 +52,14 @@
 
 
   @if (isMenuOpen) {
-    <div class="md:hidden fixed inset-0 bg-primary/50 backdrop-blur-sm z-40 mt-16">
-      <div class="px-2 pt-2 pb-4 bg-black space-y-1 sm:px-3">
+    <div class="md:hidden fixed inset-0  backdrop-blur-sm z-40 mt-16">
+      <div class="px-2 pt-2 pb-4 bg-black/98 space-y-1 sm:px-3">
         <ul class="flex flex-col items-center space-y-6 py-10">
           @for (links of headerLinks; track $index) {
             <li class="w-full text-center">
               <a [routerLink]="links.link"
                  (click)="toggleMenu()"
-                 class="block px-3 py-4 text-xl font-medium text-gray-800 hover:text-secondary hover:bg-gray-50 rounded-md transition-colors">
+                 class="block px-3 py-4 text-xl font-medium text-primary_white hover:text-secondary hover:bg-gray-50 rounded-md transition-colors">
                 {{ links.name }}
               </a>
             </li>
