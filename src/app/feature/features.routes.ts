@@ -6,6 +6,11 @@ import {ProjectsComponent} from './projects/projects.component';
 
 export const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  {
     path: 'home',
     component: HomeComponent,
     title: 'Home',
